@@ -1,7 +1,7 @@
 apiVersion: bricks/v1
 kind: Deployment
 metadata:
-  name: vm__it_westus #Change: deployment name
+  name: vm_it_westus #Change: deployment name
 spec:
   blueprint: bcp_vm_vnet_2nic
   version: 1.0.2
