@@ -1,0 +1,22 @@
+name: Deploy vm on a vnet with 2 nics
+
+on:
+  workflow_dispatch:
+    inputs:
+      plan_only:
+        description: 'Generate plan only'
+        type: boolean
+        default: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Execute deployment
+        uses: bluebricks-co/bricks-action@v1.2.0
+        with:
+          command: install
+          file: deployments/vm_vnet_2nic.yaml
+          api-key: ${{ secrets.BRICKS_API_KEY }}
