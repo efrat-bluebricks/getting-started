@@ -6,7 +6,7 @@ spec:
   blueprint: bcp_vm_vnet_2nic
   version: 1.0.2
   force: false
-  planOnly: false
+  planOnly: true
   environment: azureplayground #Change: environment to deploy
   props:
     azure_vm_with_vnet_bicep_location: northeurope #Change: location
