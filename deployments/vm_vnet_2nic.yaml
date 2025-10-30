@@ -1,7 +1,7 @@
 apiVersion: bricks/v1
 kind: Deployment
 metadata:
-  name: vm_it_centralindia #Change: deployment name
+  name: vm_it_israelcentral #Change: deployment name
 spec:
   blueprint: bcp_vm_vnet_2nic
   version: 1.0.2
@@ -9,6 +9,6 @@ spec:
   planOnly: false
   environment: azureplayground #Change: environment to deploy
   props:
-    azure_vm_with_vnet_bicep_location: centralindia #Change: location
+    azure_vm_with_vnet_bicep_location: israelcentral #Change: location
     azure_vm_with_vnet_bicep_adminPassword: P@s$w0rd$1357 #Change: admin password
     azure_vm_with_vnet_bicep_adminUsername: useradmin  #Change: admin user
