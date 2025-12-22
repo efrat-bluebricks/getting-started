@@ -1,0 +1,21 @@
+name: Plan Deployments
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'deployments/**'
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create deployment plan
+        uses: bluebricks-co/bricks-action@v1.2.0
+        with:
+          command: install
+          file: deployments/vm_vnet_2nic.yaml
+          plan-only: true
+          api-key: ${{ secrets.BRICKS_API_KEY }}
