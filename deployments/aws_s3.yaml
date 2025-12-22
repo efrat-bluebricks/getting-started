@@ -1,0 +1,13 @@
+apiVersion: bricks/v1
+kind: Deployment
+metadata:
+  name: dev_app_s3
+spec:
+  blueprint: aws_s3
+  version: 1.5.1
+  force: false
+  planOnly: true
+  environment: playground
+  props:
+    terraform_aws_s3_region: eu-west-1
+    terraform_aws_s3_bucket_name: app.bricks-stg.com
