@@ -10,4 +10,4 @@ spec:
   environment: playground
   props:
     terraform_aws_s3_region: eu-west-1
-    terraform_aws_s3_bucket_name: app.bricks-stg.com
+    terraform_aws_s3_bucket_name: dev-eu-west-1-bucket-1
