@@ -11,4 +11,4 @@ spec:
   props:
     azure_vm_with_vnet_bicep_location: northeurope #Change: location
     azure_vm_with_vnet_bicep_adminPassword: P@s$w0rd$1357 #Change: admin password
-    azure_vm_with_vnet_bicep_adminUsername: useradmin  #Change: admin user
+    azure_vm_with_vnet_bicep_adminUsername: bluebricksadmin  #Change: admin user
