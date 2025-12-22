@@ -16,6 +16,6 @@ jobs:
         uses: bluebricks-co/bricks-action@v1.2.0
         with:
           command: install
-          file: deployments/vm_vnet_2nic.yaml
+          file: deployments/aws_s3.yaml
           plan-only: true
           api-key: ${{ secrets.BRICKS_API_KEY }}
