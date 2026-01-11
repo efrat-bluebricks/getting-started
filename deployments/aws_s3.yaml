@@ -6,7 +6,7 @@ spec:
   blueprint: aws_s3
   version: 1.5.1
   force: false
-  planOnly: true
+  planOnly: false
   environment: playground
   props:
     terraform_aws_s3_region: eu-west-1
