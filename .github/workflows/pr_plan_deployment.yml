@@ -30,6 +30,6 @@ jobs:
         uses: bluebricks-co/bricks-action@v1.2.0
         with:
           command: uninstall
-          deployment: dev_app_s3
+          set-slug: dev_app_s3
           env: playground
           api-key: ${{ secrets.BRICKS_API_KEY }} 
