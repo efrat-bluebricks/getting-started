@@ -2,20 +2,34 @@ name: Plan Deployments
 
 on:
   pull_request:
+    types: [opened, reopened, closed]
     branches: [main]
     paths:
       - 'deployments/**'
 
 jobs:
-  plan:
+  opened_or_reopened:
+    if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Create deployment plan
         uses: bluebricks-co/bricks-action@v1.2.0
         with:
           command: install
           file: deployments/aws_s3.yaml
-          plan-only: true
+          plan-only: false
           api-key: ${{ secrets.BRICKS_API_KEY }}
+
+  closed_or_merged:
+    if: ${{ github.event.action == 'closed' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Uninstall deployment
+        uses: bluebricks-co/bricks-action@v1.2.0
+        with:
+          command: uninstall
+          deployment: dev_app_s3
+          env: playground
+          api-key: ${{ secrets.BRICKS_API_KEY }} 
